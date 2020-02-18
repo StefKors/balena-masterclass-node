@@ -2,10 +2,9 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-const port = 3000
+const port = 80
 
 http.createServer(function (request, response) {
-    console.log('request ', request.url);
 
     var filePath = '.' + request.url;
     if (filePath === './') {
@@ -32,7 +31,6 @@ http.createServer(function (request, response) {
     };
 
     var contentType = mimeTypes[extname] || 'application/octet-stream';
-    console.log(filePath);
     
     fs.readFile(filePath, function(error, content) {
         if (error) {
