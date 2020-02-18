@@ -2,11 +2,13 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
+const port = 3000
+
 http.createServer(function (request, response) {
     console.log('request ', request.url);
 
     var filePath = '.' + request.url;
-    if (filePath == './') {
+    if (filePath === './') {
         filePath = './index.html';
     }
 
@@ -30,7 +32,8 @@ http.createServer(function (request, response) {
     };
 
     var contentType = mimeTypes[extname] || 'application/octet-stream';
-
+    console.log(filePath);
+    
     fs.readFile(filePath, function(error, content) {
         if (error) {
             if(error.code == 'ENOENT') {
@@ -50,5 +53,5 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(80);
-console.log('Server running at http://127.0.0.1:8125/');
+}).listen(port);
+console.log(`Server running at http://127.0.0.1:${port}`);
