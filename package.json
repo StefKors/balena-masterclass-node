@@ -2,10 +2,9 @@
   "name": "balena-cli-masterclass",
   "version": "1.0.14",
   "description": "balenaCLI masterclass application",
-  "main": "src/helloworld.js",
+  "main": "views/helloworld.js",
   "scripts": {
-    "start": "node src/helloworld.js; sleep infinity",
-    "test": "echo \"There are no tests for this repository\" && exit 0"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
