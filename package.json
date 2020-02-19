@@ -2,7 +2,7 @@
   "name": "balena-cli-masterclass",
   "version": "1.0.14",
   "description": "balenaCLI masterclass application",
-  "main": "views/helloworld.js",
+  "main": "./server.js",
   "scripts": {
     "start": "node server.js"
   },
